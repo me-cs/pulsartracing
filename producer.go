@@ -1,4 +1,4 @@
-package pulsarMq
+package pulsartracing
 
 import (
 	"context"

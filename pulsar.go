@@ -1,4 +1,4 @@
-package pulsarMq
+package pulsartracing
 
 import (
 	"github.com/apache/pulsar-client-go/pulsar"

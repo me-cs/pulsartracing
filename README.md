@@ -11,3 +11,59 @@ Wrap pulsar so that it supports opentelemetry.
 English | [简体中文](README-CN.md)
 
 ### Example use:
+
+```go
+package main
+
+import (
+	"context"
+
+	"github.com/apache/pulsar-client-go/pulsar"
+	"github.com/me-cs/pulsartracing"
+)
+
+var pulsarClient pulsar.Client
+
+func produce() {
+	p, err := pulsarClient.CreateProducer(pulsar.ProducerOptions{})
+	if err != nil {
+		panic(err)
+	}
+	//Generally an upstream context that has already been traced.
+	_, _ = p.Send(context.Background(), &pulsar.ProducerMessage{})
+}
+
+func consume() {
+	customerConsumer, err := pulsarClient.Subscribe(pulsar.ConsumerOptions{})
+	if err != nil {
+		panic(err)
+	}
+	for {
+		ctx := context.Background()
+		ctx, msg, err := pulsartracing.ReceiveWithSpanCtx(ctx, customerConsumer)
+		if err != nil {
+			continue
+		}
+		err = customerConsumer.Ack(msg)
+		if err != nil {
+			continue
+		}
+		//Pass this context to the downstream
+		//downstream(ctx)
+		//Then you can see in your link tracking system (e.g. jaeger) that the message was tracked to
+	}
+}
+
+func main() {
+	var err error
+	pulsarClient, err = pulsartracing.NewClient(pulsar.ClientOptions{
+		URL: "pulsar://pulsar.xxx.cn:6650",
+	})
+	if err != nil {
+		panic(err)
+	}
+	produce()
+	consume()
+}
+
+```
