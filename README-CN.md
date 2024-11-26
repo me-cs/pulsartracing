@@ -1,7 +1,7 @@
 # pulsartracing
 封装pulsar库以支持 opentelemetry.
 
-[![Go](https://github.com/me-cs/pulsartracing/workflows/Go/badge.svg?branch=main)](https://github.com/me-cs/pulsartracing/actions)
+[![Go](https://github.com/me-cs/pulsartracing/workflows/Go/badge.svg)](https://github.com/me-cs/pulsartracing/actions)
 [![codecov](https://codecov.io/gh/me-cs/pulsartracing/branch/main/graph/badge.svg)](https://codecov.io/gh/me-cs/pulsartracing)
 [![Release](https://img.shields.io/github/v/release/me-cs/pulsartracing.svg?style=flat-square)](https://github.com/me-cs/pulsartracing)
 [![Go Report Card](https://goreportcard.com/badge/github.com/me-cs/pulsartracing)](https://goreportcard.com/report/github.com/me-cs/pulsartracing)
