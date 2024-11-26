@@ -1,5 +1,5 @@
 # pulsartracing
-Wrap pulsar so that it supports opentelemetry.
+封装pulsar库以支持 opentelemetry.
 
 [![Go](https://github.com/me-cs/pulsartracing/workflows/Go/badge.svg)](https://github.com/me-cs/pulsartracing/actions)
 [![codecov](https://codecov.io/gh/me-cs/pulsartracing/branch/main/graph/badge.svg)](https://codecov.io/gh/me-cs/pulsartracing)
@@ -8,6 +8,6 @@ Wrap pulsar so that it supports opentelemetry.
 [![Go Reference](https://pkg.go.dev/badge/github.com/me-cs/pulsartracing.svg)](https://pkg.go.dev/github.com/me-cs/pulsartracing)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-English | [简体中文](README-CN.md)
+简体中文 | [English](README.md)
 
-### Example use:
+### 使用示例:
