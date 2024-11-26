@@ -66,3 +66,35 @@ func main() {
 }
 
 ```
+
+更重要的
+假设你的应用程序是这样初始化opentelemetry的，你需要把opentelemetry桥接到opentracing
+```go
+package main
+
+import (
+	"github.com/opentracing/opentracing-go"
+	"go.opentelemetry.io/otel"
+	otelBridge "go.opentelemetry.io/otel/bridge/opentracing"
+	sdktrace "go.opentelemetry.io/otel/sdk/trace"
+)
+
+var (
+	tp *sdktrace.TracerProvider
+)
+
+func main() {
+	opts := []sdktrace.TracerProviderOption{}
+	tp = sdktrace.NewTracerProvider(opts...)
+	otel.SetTracerProvider(tp)
+	otelTracer := tp.Tracer("you trace name")
+	// Use the bridgeTracer as your OpenTracing tracer.
+	bridgeTracer, wrapperTracerProvider := otelBridge.NewTracerPair(otelTracer)
+	// Set the wrapperTracerProvider as the global OpenTelemetry
+	// TracerProvider so instrumentation will use it by default.
+	otel.SetTracerProvider(wrapperTracerProvider)
+	opentracing.SetGlobalTracer(bridgeTracer)
+	return
+}
+
+```
