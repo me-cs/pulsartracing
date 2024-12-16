@@ -1,14 +1,13 @@
 module github.com/me-cs/pulsartracing
 
 go 1.22
-
 toolchain go1.23.3
 
 require (
 	github.com/apache/pulsar-client-go v0.14.0
 	github.com/opentracing/opentracing-go v1.2.0
 	github.com/stretchr/testify v1.10.0
-	go.opentelemetry.io/otel/bridge/opentracing v1.32.0
+	go.opentelemetry.io/otel/bridge/opentracing v1.33.0
 )
 
 require (
@@ -48,9 +47,10 @@ require (
 	github.com/prometheus/procfs v0.8.0 // indirect
 	github.com/sirupsen/logrus v1.9.3 // indirect
 	github.com/spaolacci/murmur3 v1.1.0 // indirect
-	go.opentelemetry.io/otel v1.32.0 // indirect
-	go.opentelemetry.io/otel/metric v1.32.0 // indirect
-	go.opentelemetry.io/otel/trace v1.32.0 // indirect
+	go.opentelemetry.io/auto/sdk v1.1.0 // indirect
+	go.opentelemetry.io/otel v1.33.0 // indirect
+	go.opentelemetry.io/otel/metric v1.33.0 // indirect
+	go.opentelemetry.io/otel/trace v1.33.0 // indirect
 	go.uber.org/atomic v1.7.0 // indirect
 	golang.org/x/mod v0.18.0 // indirect
 	golang.org/x/net v0.23.0 // indirect
