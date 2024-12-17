@@ -101,3 +101,7 @@ func main() {
 }
 
 ```
+
+Here's a screenshot of my test, if your follow my steps, you can see the message being tracked correctly in your environment too!
+![example](./doc/example-en.png)
+If you have any questions, feel free to ask questions, I'm happy to help~
