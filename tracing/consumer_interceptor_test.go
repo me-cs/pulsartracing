@@ -79,6 +79,10 @@ func (c *mockConsumer) AckID(msgID pulsar.MessageID) error {
 	return nil
 }
 
+func (c *mockConsumer) AckIDList(msgID []pulsar.MessageID) error {
+	return nil
+}
+
 func (c *mockConsumer) AckCumulative(msg pulsar.Message) error {
 	return nil
 }
