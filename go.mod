@@ -7,7 +7,7 @@ toolchain go1.24.1
 require (
 	github.com/apache/pulsar-client-go v0.16.0
 	github.com/opentracing/opentracing-go v1.2.0
-	github.com/stretchr/testify v1.10.0
+	github.com/stretchr/testify v1.11.1
 	go.opentelemetry.io/otel/bridge/opentracing v1.37.0
 )
 
